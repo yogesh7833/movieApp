@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import Logo from '../assets/logo.png'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import User from '../assets/user.png'
 import { IoSearchOutline } from 'react-icons/io5'
 import { navigation } from '../constants/Navigation'
@@ -43,9 +43,11 @@ const Header = () => {
         <div className='ml-auto flex gap-8 items-center'>
             <form className='flex items-center ' onSubmit={handleSubmit}>
                 <input type='text' className=' bg-transparent rounded py-1 outline-none text-white  px-4 text-black hidden lg:block' placeholder='search here...' onChange={(e)=>setSearchInput(e.target.value)} value={searchInput} />
-                <button  className=' text-2xl text-white'>
+                <Link to='/search'>
+                  <button  className='hidden lg:block text-2xl text-white'>
                     <IoSearchOutline />
-                </button>
+                   </button>
+                </Link>
             </form>
             <div className='w-7 h-7 rounded-full overflow-hidden cursor-pointer active:scale-50 transition-all duration-300 '>
                 <img src={User} width='w-full h-full' />

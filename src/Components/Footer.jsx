@@ -10,7 +10,7 @@ const Footer = () => {
       </div>
       <div className='flex text-center items-center justify-center gap-2 text-sm'>
       <p>Created By Yogesh</p>
-      <p><FaHeart/></p>
+      <p><FaHeart className='text-red-500'/></p>
       </div>
     </footer>
     

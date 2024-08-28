@@ -99,11 +99,11 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { FaAngleRight } from 'react-icons/fa'
 import { FaAngleLeft } from 'react-icons/fa6'
+import VidioPlay from './VidioPlay'
 const BannerHome = () => {
     const bannerData=useSelector((state)=>state.movieoData.bannerData)
     const imageURL=useSelector(state=>state.movieoData.imageURL)
     const [currentImage,setCurrentImage]=useState(0);
-    
     const handleNext=()=>{
         if(currentImage<bannerData.length-1){
             setCurrentImage(prev=>prev+1)
@@ -125,6 +125,7 @@ const BannerHome = () => {
         },4000)
         return ()=>clearInterval(interval)
     },[bannerData,imageURL,currentImage])
+
 
   return (
     <section className='w-full h-full'>
@@ -154,13 +155,13 @@ const BannerHome = () => {
                                 <p className='text-ellipsis line-clamp-3 my-3'>{data.overview}</p>
                                 <div className='flex items-center gap-4'>
                                     <p>Rating:{Number(data.vote_average).toFixed(1)}+</p>
-                                    <span>|</span>
-                                    <p>view:{Number(data.popularity).toFixed(0)}</p>
-                                   
+                                    {/* <span>|</span>
+                                    <p>view:{Number(data.popularity).toFixed(0)}</p> */}
                                 </div>
                                 <button className='py-2 px-4 mt-4 font-bold rounded bg-white text-black hover:bg-black transition-all duration-300 hover:text-white hover:scale-105'>Play Now</button>
                             </div>
                             </div>
+      
                             
                         </div>
                     )
